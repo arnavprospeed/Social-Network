@@ -15,12 +15,14 @@
 <html>
 <body>
 	<h3> Log in:</h3>
-	<form action="index.php" method="POST">
-		<input type="text" placeholder="username" id="username" name="username" required
-       oninvalid="this.setCustomValidity('User ID is a must')" oninput="setCustomValidity('')"></input>
+	<form name="login" action="index.php" method="POST">
+		<input type="text" placeholder="username" id="username" name="username"
+		value="<?php echo isset($_POST['username']) ? $_POST['username'] : '' ?>" required
+       oninvalid="this.setCustomValidity('User ID is a must')" oninput="setCustomValidity('')">
+			 </input>
 			 <br>
 		<input type="password" placeholder="password" id="password" name="password" required
-       oninvalid="this.setCustomValidity('User ID is a must')" oninput="setCustomValidity('')"></input>
+       oninvalid="this.setCustomValidity('Password is a must')" oninput="setCustomValidity('')"></input>
 		<br>
 		<input type="submit" id="submit" name="Submit"></input>
 	</form>
