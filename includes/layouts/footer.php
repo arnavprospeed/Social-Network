@@ -1,5 +1,5 @@
 <footer>
-  <div ="footer-div">
+  <div id="footer-div">
     <p>Copyright &copyright 2015 CMS</p>
   </div>
 </footer>

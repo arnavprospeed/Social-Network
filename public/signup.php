@@ -25,8 +25,10 @@
 			 <br>
 	  <input type="text" placeholder="Full Name" id="name" name="name" required
 			 oninvalid="this.setCustomValidity('Please enter your name')" oninput="setCustomValidity('')"></input>
+			 <br>
 		<input type="text" placeholder="phone number" id="phone_no" name="phone_no" required
 		   oninvalid="this.setCustomValidity('Please enter your Phone no')" oninput="setCustomValidity('')"></input>
+			 <br>
 		<input type="text" placeholder="Email address" id="email_id" name="email_id" required
 	 		 oninvalid="this.setCustomValidity('Please enter your email id')" oninput="setCustomValidity('')"></input>
 		<br>
@@ -35,6 +37,6 @@
 	<br>
 	<hr>
 	<br>
-	<a href="signup.php">Sign up for new account for free!</a>
+	<a href="index.php">Have an account? Log in</a>
 </body>
 <?php include("../includes/layouts/footer.php"); ?>

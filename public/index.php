@@ -14,6 +14,7 @@
 ?>
 <html>
 <body>
+	<h3> Log in:</h3>
 	<form action="index.php" method="POST">
 		<input type="text" placeholder="username" id="username" name="username" required
        oninvalid="this.setCustomValidity('User ID is a must')" oninput="setCustomValidity('')"></input>
@@ -27,5 +28,6 @@
 	<hr>
 	<br>
 	<a href="signup.php">Sign up for new account for free!</a>
+	<br>
 </body>
 <?php include("../includes/layouts/footer.php"); ?>
