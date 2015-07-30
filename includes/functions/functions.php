@@ -2,10 +2,16 @@
   function redirect($location){
     header("Location: ". $location);
   }
-    
+
+  function mysql_prep($string){
+    global $connection;
+    $escaped_string=mysql_prep_escape_string($connection,$string);
+    return $escape_string;
+  }
+
   function validate_user($username,$password){
     global $connection;
-    $safe_username=mysqli_real_escape_string($connection,$username);
+    $safe_username=mysql_prep($username);
     $query="SELECT password FROM user_auth WHERE user_id = '{$username}' LIMIT 1";
 
     $password_set=mysqli_query($connection,$query);
@@ -27,7 +33,7 @@
 
   function check_available($username){
       global $connection;
-      $safe_username=mysqli_real_escape_string($connection,$username);
+      $safe_username=mysql_prep($username);
       $query="SELECT user_id FROM user_auth WHERE user_id = '{$safe_username}'";
       $checkUserID=mysqli_query($connection,$query);
       if (mysqli_num_rows($checkUserID)>0){
@@ -85,8 +91,8 @@
 
   function createUser($username,$password,$name,$phone_no,$email){
     global $connection;
-    $safe_username=mysqli_real_escape_string($connection,$username);
-    $safe_email=mysqli_real_escape_string($connection,$email);
+    $safe_username=mysql_prep($username);
+    $safe_email=mysql_prep($email);
     $hashed_password=password_encrypt($password);
     $query="INSERT INTO ";
     $query.="user_auth (user_id,password) ";
