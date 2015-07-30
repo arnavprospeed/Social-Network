@@ -1,7 +1,3 @@
-<?php
-function redirect($location){
-header("Location: ". $location);
-} ?>
 <html>
 <head>
   <title>

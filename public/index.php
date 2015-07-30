@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include("../includes/layouts/header.php"); ?>
 <?php require_once("../includes/functions/functions.php"); ?>
 <?php require_once("../includes/functions/db_connection.php"); ?>

@@ -1,4 +1,8 @@
 <?php
+  function redirect($location){
+    header("Location: ". $location);
+  }
+    
   function validate_user($username,$password){
     global $connection;
     $safe_username=mysqli_real_escape_string($connection,$username);
@@ -103,4 +107,15 @@
       echo "Query failed";
     return $result;
   }
+
+  function logged_in(){
+    return isset($_SESSION['username']);
+  }
+  function confirm_logged_in(){
+    if(!logged_in()){
+      redirect("index.php");
+    }
+  }
+
+
 ?>
