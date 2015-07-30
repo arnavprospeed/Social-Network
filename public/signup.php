@@ -3,8 +3,11 @@
 <?php require_once("../includes/functions/db_connection.php"); ?>
 <?php
 	if(isset($_POST["username"])){
-		if(check_available($_POST["username"])){
-				echo "Username available";
+		if(check_available($_POST["username"])&&validateCred($_POST["username"],$_POST["password"])){
+				//echo "Username available";
+				if(createUser($_POST["username"],$_POST["password"],$_POST["name"],$_POST["phone_no"],$_POST["email_id"])){
+					echo "Account created successfully. Go to <a href=index.php>Log in</a> page.";
+				}
 		}
 		else{
 			echo "<p class=\"invalid_cred\">Username not available</p>";

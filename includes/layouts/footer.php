@@ -1,6 +1,6 @@
 <footer>
   <div id="footer-div">
-    <p>Copyright &copyright 2015 CMS</p>
+    <p>Copyright &copyright 2015 Connect</p>
   </div>
 </footer>
 </body>

@@ -1,12 +1,15 @@
 .header{
   height: 50px;
-  background-color: #DDD;
+  background-color: rgb(93, 142, 23);
   text-align: center;
   padding-top:2%;
 }
 #footer-div{
   height: 50px;
-  background-color: #DDD;
+  background-color: rgb(93, 142, 23);
   text-align: center;
   padding-top:1%;
+}
+#main{
+  height: 490px;
 }
