@@ -5,8 +5,11 @@
 	if(isset($_POST["username"])){
 		if(check_available($_POST["username"])&&validateCred($_POST["username"],$_POST["password"])){
 				//echo "Username available";
+
 				if(createUser($_POST["username"],$_POST["password"],$_POST["name"],$_POST["phone_no"],$_POST["email_id"])){
-					echo "Account created successfully. Go to <a href=index.php>Log in</a> page.";
+
+					redirect("index.php?signedup=1");
+					//echo "Account created successfully. Go to <a href=index.php>Log in</a> page.";
 				}
 		}
 		else{

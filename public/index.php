@@ -2,12 +2,20 @@
 <?php require_once("../includes/functions/functions.php"); ?>
 <?php require_once("../includes/functions/db_connection.php"); ?>
 <?php
+	if(isset($_GET["signedup"]))
+	{
+		if($_GET["signedup"]==1){
+			echo "Account created successfully. Please log in.";
+		}
+	}
 	if(isset($_POST["username"])){
 		if(validate_user($_POST["username"],$_POST["password"])){
-				echo "Valid user";
+				$_SESSION["username"]=$_POST["username"];
+				redirect("home.php");
+				//echo "Valid user";
 		}
 		else{
-			echo "<p class=\"invalid_cred\">Invalid Username or Password</p>";
+			echo "<p id=\"invalid_cred\">Invalid Username or Password</p>";
 		}
 	}
 ?>
@@ -17,7 +25,7 @@
 		<h3> Log in:</h3>
 		<form name="login" action="index.php" method="POST">
 			<input type="text" placeholder="username" id="username" name="username"
-			value="<?php echo isset($_POST['username']) ? $_POST['username'] : '' ?>" required
+			value="<?php echo isset($_POST['username']) ? htmlentities($_POST['username']) : '' ?>" required
 	       oninvalid="this.setCustomValidity('User ID is a must')" oninput="setCustomValidity('')">
 				 </input>
 				 <br>
@@ -28,16 +36,7 @@
 		</form>
 		<br>
 		<hr>
-		<?php
-			$password="secret";
-			$hash_format="$2y$10$";
-			$salt="Salt22CharactersOrMore";
-			echo "Length:".strlen($salt);
-			$format_and_salt = $hash_format . $salt;
-			$hash=crypt($password,$format_and_salt);
-			echo "<br>";
-			echo $hash;
-		 ?>
+
 		<br>
 		<a href="signup.php">Sign up for new account for free!</a>
 		<br>

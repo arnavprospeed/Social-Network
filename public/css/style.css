@@ -1,5 +1,6 @@
 .header{
   height: 50px;
+  color: white;
   background-color: rgb(93, 142, 23);
   text-align: center;
   padding-top:2%;
@@ -9,7 +10,11 @@
   background-color: rgb(93, 142, 23);
   text-align: center;
   padding-top:1%;
+  color: white;
 }
 #main{
-  height: 490px;
+  height: 470px;
+}
+#invalid_cred{
+  color:red;
 }
